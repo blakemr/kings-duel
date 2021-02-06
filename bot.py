@@ -1,10 +1,16 @@
 # bot.py - A primitive chess bot
 
 import chess
+import random
 
 
-def bot_basic():
-    pass
+def bot_basic(board):
+    """Makes random moves
+
+    args:
+        board: chess.board handle
+    """
+    NotImplemented
 
 
 def bot_fighting_fish(board, engine, timelimit):
