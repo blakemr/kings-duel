@@ -10,7 +10,9 @@ def bot_basic(board):
     args:
         board: chess.board handle
     """
-    NotImplemented
+    moves = list(board.legal_moves)
+    selection = random.randrange(0, len(moves) - 1)
+    board.push(moves[selection])
 
 
 def bot_fighting_fish(board, engine, timelimit):
