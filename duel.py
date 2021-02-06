@@ -25,16 +25,18 @@ def engine_game(board, engine_path):
     args:
         board: board to play on
         engine_path: path to engine to be used
+
+    returns:
+        number of moves the game took
     """
     engine = chess.engine.SimpleEngine.popen_uci(engine_path)
 
     while not board.is_game_over():
         bot.bot_fighting_fish(board, engine, 0.1)
 
-        print(board)
-        print()
-
     engine.quit
+
+    return board.fullmove_number
 
 
 def random_game(board):
@@ -43,12 +45,13 @@ def random_game(board):
     args:
         board: board to play on
 
+    returns:
+        number of moves the game took
     """
     while not board.is_game_over():
         bot.bot_basic(board)
 
-        print(board)
-        print()
+    return board.fullmove_number
 
 
 if __name__ == "__main__":
@@ -63,4 +66,4 @@ if __name__ == "__main__":
     else:
         engine_game(board, engine_path)
 
-    print("Moves, ", len(board.move_stack))
+    print("Moves:", board.fullmove_number)
