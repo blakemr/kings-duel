@@ -52,14 +52,15 @@ def random_game(board):
 
 
 if __name__ == "__main__":
-    engine_path = sys.argv[1]
-
     board = setup()
 
-    if not engine_path:
+    try:
+        engine_path = sys.argv[1]
+
+    except IndexError:
         random_game(board)
 
     else:
         engine_game(board, engine_path)
 
-    print(0)
+    print("Moves, ", len(board.move_stack))
