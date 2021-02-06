@@ -1,7 +1,0 @@
-bin
-lib
-pyvenv.cfg
-share
-etc
-.vscode
-.ipynb_checkpoints
