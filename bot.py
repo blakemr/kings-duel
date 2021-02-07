@@ -1,11 +1,11 @@
-# bot.py - A primitive chess bot
+# bot.py - Interfaces to various chess bots
 
 import chess
 import random
 
 
-def bot_basic(board):
-    """Makes random moves
+def bot_random(board):
+    """A bot that only makes random moves
 
     args:
         board: chess.board handle
@@ -14,8 +14,8 @@ def bot_basic(board):
     board.push(move)
 
 
-def bot_fighting_fish(board, engine, timelimit):
-    """Uses an engine to compute moves
+def bot_engine(board, engine, timelimit):
+    """Use an engine to compute moves
 
     args:
         board: chess.board handle

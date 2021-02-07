@@ -1,14 +1,24 @@
+# test.py - Run analysis on various chess bots
+
 import duel
 import matplotlib.pyplot as plt
 
-move_counts = []
 
-for i in range(1000):
-    board = duel.setup()
-    move_counts.append(duel.random_game(board))
+def random_game_length_histogram(trials):
+    """Plots a histogram showing the length of random bot games
 
-    if i % 100 == 0:
-        print(i)
+    args:
+        trials: number of trials to run
+    """
+    move_counts = []
 
-plt.hist(move_counts)
-plt.show()
+    for i in range(trials):
+        board = duel.setup()
+        move_counts.append(duel.random_game(board))
+
+        # Output tials progress
+        if i % 100 == 0:
+            print(i)
+
+    plt.hist(move_counts)
+    plt.show()
